@@ -21,7 +21,9 @@ file(GLOB_RECURSE LIB_SRECORD_SRC "*.cc")
 file(GLOB_RECURSE LIB_SRECORD_HDR "*.h")
 
 message(STATUS "gcrypt location ${LIB_GCRYPT}")
-add_library(srecord STATIC ${LIB_SRECORD_SRC} ${LIB_SRECORD_HDR} ${LIB_GCRYPT})
+add_library(srecord SHARED ${LIB_SRECORD_SRC} ${LIB_SRECORD_HDR} ${LIB_GCRYPT})
+set_target_properties(srecord PROPERTIES SOVERSION ${PROJECT_VERSION} VERSION ${PROJECT_VERSION})
+target_link_libraries(srecord ${LIB_GCRYPT})
 target_compile_features(srecord PUBLIC cxx_std_11)
 
 # Install the library
