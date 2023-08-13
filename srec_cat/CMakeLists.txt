@@ -19,6 +19,6 @@
 # Build srecord executable
 file(GLOB_RECURSE SREC_CAT_SRC "*.cc")
 add_executable(srec_cat ${SREC_CAT_SRC})
-target_link_libraries(srec_cat lib_srecord ${LIB_GCRYPT})
+target_link_libraries(srec_cat srecord ${LIB_GCRYPT})
 
 INSTALL_SRECORD_EXECUTABLE_TARGET(srec_cat)
