@@ -21,10 +21,10 @@ file(GLOB_RECURSE LIB_SRECORD_SRC "*.cc")
 file(GLOB_RECURSE LIB_SRECORD_HDR "*.h")
 
 message(STATUS "gcrypt location ${LIB_GCRYPT}")
-add_library(lib_srecord STATIC ${LIB_SRECORD_SRC} ${LIB_SRECORD_HDR} ${LIB_GCRYPT})
+add_library(srecord STATIC ${LIB_SRECORD_SRC} ${LIB_SRECORD_HDR} ${LIB_GCRYPT})
 
 # Install the library
-install(TARGETS lib_srecord
+install(TARGETS srecord
         DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 # Install the development headers

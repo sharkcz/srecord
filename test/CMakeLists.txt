@@ -19,23 +19,23 @@
 # Build test support executables
 file(GLOB_RECURSE TEST_ARGLEX_AMBIGUOUS_SRC "arglex_ambiguous/*.cc")
 add_executable(test_arglex_ambiguous ${TEST_ARGLEX_AMBIGUOUS_SRC})
-target_link_libraries(test_arglex_ambiguous lib_srecord ${LIB_GCRYPT})
+target_link_libraries(test_arglex_ambiguous srecord ${LIB_GCRYPT})
 
 file(GLOB_RECURSE TEST_CRC16_SRC "crc16/*.cc")
 add_executable(test_crc16 ${TEST_CRC16_SRC})
-target_link_libraries(test_crc16 lib_srecord)
+target_link_libraries(test_crc16 srecord)
 
 file(GLOB_RECURSE TEST_FLETCHER16_SRC "fletcher16/*.cc")
 add_executable(test_fletcher16 ${TEST_FLETCHER16_SRC})
-target_link_libraries(test_fletcher16 lib_srecord)
+target_link_libraries(test_fletcher16 srecord)
 
 file(GLOB_RECURSE TEST_HYPHEN_SRC "hyphen/*.cc")
 add_executable(test_hyphen ${TEST_HYPHEN_SRC})
-target_link_libraries(test_hyphen lib_srecord)
+target_link_libraries(test_hyphen srecord)
 
 file(GLOB_RECURSE TEST_URL_DECODE_SRC "url_decode/*.cc")
 add_executable(test_url_decode ${TEST_URL_DECODE_SRC})
-target_link_libraries(test_url_decode lib_srecord)
+target_link_libraries(test_url_decode srecord)
 
 configure_file(test_prelude.sh test_prelude COPYONLY)
 
